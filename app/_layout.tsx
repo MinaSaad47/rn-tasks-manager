@@ -1,5 +1,4 @@
-import
-{
+import {
   DarkTheme,
   DefaultTheme,
   ThemeProvider,
@@ -16,12 +15,10 @@ import { getTheme } from "@/constants/theme";
 import { TasksProvider } from "@/contexts/tasks-context";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
-export
-{
+export {
   // Catch any errors thrown by the Layout component.
-  ErrorBoundary
+  ErrorBoundary,
 } from "expo-router";
-
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -61,15 +58,15 @@ function RootLayoutNav() {
           borderLeftColor: theme.colors.primary,
           backgroundColor: theme.colors.surface,
         }}
-        contentContainerStyle={{ paddingHorizontal: 14 }}
+        contentContainerStyle={{ paddingHorizontal: 10 }}
         text1Style={{
           color: theme.colors.text,
-          fontSize: 14,
-          fontWeight: "700",
+          fontSize: 12,
+          fontWeight: "600",
         }}
         text2Style={{
           color: theme.colors.mutedText,
-          fontSize: 13,
+          fontSize: 11,
         }}
       />
     ),
@@ -80,15 +77,15 @@ function RootLayoutNav() {
           borderLeftColor: theme.colors.danger,
           backgroundColor: theme.colors.surface,
         }}
-        contentContainerStyle={{ paddingHorizontal: 14 }}
+        contentContainerStyle={{ paddingHorizontal: 10 }}
         text1Style={{
           color: theme.colors.text,
-          fontSize: 14,
-          fontWeight: "700",
+          fontSize: 12,
+          fontWeight: "600",
         }}
         text2Style={{
           color: theme.colors.mutedText,
-          fontSize: 13,
+          fontSize: 11,
         }}
       />
     ),
