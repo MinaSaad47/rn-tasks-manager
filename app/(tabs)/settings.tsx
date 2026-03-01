@@ -1,5 +1,7 @@
+import { SymbolView } from "expo-symbols";
 import { useState } from "react";
-import {
+import
+{
   Alert,
   Appearance,
   Pressable,
@@ -8,7 +10,6 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { SymbolView } from "expo-symbols";
 import Toast from "react-native-toast-message";
 
 import { useTasksContext } from "@/contexts/tasks-context";
@@ -25,7 +26,7 @@ export default function SettingsScreen() {
 
   const setMode = (mode: ThemeMode) => {
     setThemeMode(mode);
-    Appearance.setColorScheme((mode === "system" ? null : mode) as never);
+    Appearance.setColorScheme((mode === "system" ? "unspecified" : mode) as never);
     Toast.show({
       type: "success",
       text1: `Theme: ${mode[0].toUpperCase()}${mode.slice(1)}`,
