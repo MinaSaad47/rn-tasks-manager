@@ -8,10 +8,6 @@
 
 This project demonstrates a polished task management app built as an interview/demo showcase. It features local task CRUD operations, filtering, theme support, and consistent UX patterns using Expo's file-based routing.
 
-**Interview context:**
-
-- Built to demonstrate file-based routing, custom components, state management, and UX polish in a React Native context.
-
 ---
 
 ## Features
@@ -42,42 +38,76 @@ This project demonstrates a polished task management app built as an interview/d
 | `expo-symbols`               | SF Symbols icons for iOS/Android/Web  |
 | `react-native-toast-message` | Toast notifications for user feedback |
 
+- **Java 17** — Required for Gradle builds
+
 ---
 
 ## Setup & Running
 
 **Prerequisites:**
 
-- Node.js 18+
-- npm or yarn
-- Expo CLI: `npm i -g expo-cli`
+- Node.js 18+ or 20+ (recommended)
+- npm package manager
+- Git for version control
+- Android Studio or Xcode (for native development, optional)
+- Android emulator or iOS Simulator (recommended for testing)
+- Physical Android/iOS device with USB debugging (optional)
 
-**Installation:**
+**Repository:**
+https://github.com/MinaSaad47/rn-tasks-manager
+
+---
+
+### Installation
 
 ```bash
 # Clone repository
-git clone <repository-url>
-cd task-manager
+git clone https://github.com/MinaSaad47/rn-tasks-manager.git
+cd rn-tasks-manager
 
 # Install dependencies
 npm install
 ```
 
-**Running Locally:**
+---
+
+### Running Locally
+
+**Start Expo Development Server:**
 
 ```bash
-# Start Expo dev server
+# Start with development client
 npm start
+```
 
-# Run on Android
+---
+
+### Running on Platforms
+
+**Android:**
+
+```bash
 npm run android
+```
 
-# Run on iOS
+**iOS:**
+
+```bash
 npm run ios
+```
 
-# Run on Web
+**Web:**
+
+```bash
 npm run web
 ```
+
+---
+
+### Downloads
+
+**Latest Android APK:**
+https://github.com/MinaSaad47/rn-tasks-manager/releases/latest
 
 ---
 
@@ -85,9 +115,9 @@ npm run web
 
 **Creating Tasks:**
 
-1. Tap the **+** FAB button or navigate to Tasks tab
-2. Fill in title and description
-3. Tap "Add Task"
+- Tap **+** FAB button or navigate to Tasks tab
+- Fill in title and description
+- Tap "Add Task"
 
 **Managing Tasks:**
 
