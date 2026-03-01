@@ -1,7 +1,6 @@
 import { SymbolView } from "expo-symbols";
 import { useState } from "react";
-import
-{
+import {
   Alert,
   Appearance,
   Pressable,
@@ -26,11 +25,9 @@ export default function SettingsScreen() {
 
   const setMode = (mode: ThemeMode) => {
     setThemeMode(mode);
-    Appearance.setColorScheme((mode === "system" ? "unspecified" : mode) as never);
-    Toast.show({
-      type: "success",
-      text1: `Theme: ${mode[0].toUpperCase()}${mode.slice(1)}`,
-    });
+    Appearance.setColorScheme(
+      (mode === "system" ? "unspecified" : mode) as never,
+    );
   };
 
   const handleSeed = async () => {
