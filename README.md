@@ -9,6 +9,7 @@
 This project demonstrates a polished task management app built as an interview/demo showcase. It features local task CRUD operations, filtering, theme support, and consistent UX patterns using Expo's file-based routing.
 
 **Interview context:**
+
 - Built to demonstrate file-based routing, custom components, state management, and UX polish in a React Native context.
 
 ---
@@ -16,6 +17,7 @@ This project demonstrates a polished task management app built as an interview/d
 ## Features
 
 **Core Features:**
+
 - Create, edit, and delete tasks
 - Toggle completion status
 - Filter tasks by: All, Todo, Done (with live counts)
@@ -29,27 +31,29 @@ This project demonstrates a polished task management app built as an interview/d
 ## Tech Stack
 
 **Project Origin:**
+
 - Started from Expo Router **tabs template**
 - Uses Expo **file-based routing** for navigation
 
 **Third-Party Libraries (Custom Additions):**
 
-| Library | Purpose |
-|---------|---------|
-| `expo-symbols` | SF Symbols icons for iOS/Android/Web |
+| Library                      | Purpose                               |
+| ---------------------------- | ------------------------------------- |
+| `expo-symbols`               | SF Symbols icons for iOS/Android/Web  |
 | `react-native-toast-message` | Toast notifications for user feedback |
-
 
 ---
 
 ## Setup & Running
 
 **Prerequisites:**
+
 - Node.js 18+
 - npm or yarn
 - Expo CLI: `npm i -g expo-cli`
 
 **Installation:**
+
 ```bash
 # Clone repository
 git clone <repository-url>
@@ -60,6 +64,7 @@ npm install
 ```
 
 **Running Locally:**
+
 ```bash
 # Start Expo dev server
 npm start
@@ -79,25 +84,30 @@ npm run web
 ## Usage Instructions
 
 **Creating Tasks:**
+
 1. Tap the **+** FAB button or navigate to Tasks tab
 2. Fill in title and description
 3. Tap "Add Task"
 
 **Managing Tasks:**
+
 - Tap checkbox → toggle complete/incomplete
 - Tap task text → open details sheet
 - Swipe task item left → delete (with confirmation)
 - Tap "Edit" in details → modify task
 
 **Filtering:**
+
 - Use All/Todo/Done buttons at top of list
 - Live task counts displayed for each filter
 
 **Theme:**
+
 - Navigate to Settings tab
 - Select Light, Dark, or System mode
 
 **Demo Data:**
+
 - Settings → "Seed 20 Tasks" for quick demo
 - Settings → "Clear All Tasks" to reset
 
@@ -105,7 +115,11 @@ npm run web
 
 ## Video Preview
 
-<video src="https://raw.githubusercontent.com/MinaSaad47/rn-tasks-manager/refs/heads/main/screenshots/video.mp4" controls width="600"></video>
+### [📹 Watch Demo Video](./screenshots/video.mp4)
+
+_Click to open or download full demo video_
+
+> **Note:** Opens video file directly in browser or downloads for playback
 
 ---
 
@@ -149,30 +163,35 @@ task-manager/
 **Note:** Add actual screenshots after testing
 
 ### Tasks Screen
+
 ![Tasks Screen](./screenshots/tasks-screen.png)
 
-*Task list with filter buttons and FAB*
+_Task list with filter buttons and FAB_
 
 ### Create Task
+
 ![Create Task](./screenshots/create-task.png)
 
-*Bottom sheet form for creating tasks*
+_Bottom sheet form for creating tasks_
 
 ### Task Details
+
 ![Task Details](./screenshots/task-details.png)
 
-*Task details with edit and delete actions*
+_Task details with edit and delete actions_
 
 ### Settings
+
 ![Settings](./screenshots/settings.png)
 
-*Theme selection and demo data controls*
+_Theme selection and demo data controls_
 
 ---
 
 ## CI/CD
 
 GitHub Actions workflow builds release APK on push to `main`:
+
 - Uses Gradle `assembleRelease` with default signing
 - Type check (`npx tsc --noEmit`) before build
 - APK published to GitHub Releases with version tags
