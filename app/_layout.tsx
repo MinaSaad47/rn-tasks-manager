@@ -1,4 +1,5 @@
-import {
+import
+{
   DarkTheme,
   DefaultTheme,
   ThemeProvider,
@@ -15,14 +16,12 @@ import { getTheme } from "@/constants/theme";
 import { TasksProvider } from "@/contexts/tasks-context";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
-export {
+export
+{
   // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+  ErrorBoundary
 } from "expo-router";
 
-export const unstable_settings = {
-  initialRouteName: "(tabs)",
-};
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -100,6 +99,7 @@ function RootLayoutNav() {
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <TasksProvider>
           <Stack>
+            <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen
               name="tasks/create"
