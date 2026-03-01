@@ -115,11 +115,11 @@ npm run web
 
 ## Video Preview
 
-### [📹 Watch Demo Video](./screenshots/video.mp4)
+[![Watch video](./screenshots/video.mp4)](https://raw.githubusercontent.com/MinaSaad47/rn-tasks-manager/refs/heads/main/screenshots/video.mp4)
 
-_Click to open or download full demo video_
+_Click thumbnail to open or download full demo video_
 
-> **Note:** Opens video file directly in browser or downloads for playback
+> **Note:** Links to `video.mp4` file in repository
 
 ---
 
