@@ -105,15 +105,7 @@ npm run web
 
 ## Video Preview
 
-**[Video placeholder: Add your demo video file to `./screenshots/demo.mp4` and update the link below]**
-
-> 📹 **Option 1:** Use a direct link to video file
-> [Demo Video](./screenshots/demo.mp4)
-
-> **🎥 **Option 2:** Embed using HTML (works on GitHub Pages, not plain README)
-> <video src="./screenshots/demo.mp4" controls width="600"></video>
-
-> ⚠️ **Note:** For GitHub repository README, the direct link (Option 1) is recommended.
+<video src="https://raw.githubusercontent.com/MinaSaad47/rn-tasks-manager/refs/heads/main/screenshots/video.mp4" controls width="600"></video>
 
 ---
 
