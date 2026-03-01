@@ -1,8 +1,7 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { useEffect, useMemo, useRef, useState } from "react";
-import
-{
+import {
   ActivityIndicator,
   Alert,
   Pressable,
@@ -17,8 +16,7 @@ import { useTasksContext } from "@/contexts/tasks-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import type { Task } from "@/types/task";
 
-export default function TaskDetailsScreen()
-{
+export default function TaskDetailsScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { getTaskById, toggleTask, deleteTask } = useTasksContext();
   const theme = useAppTheme();
@@ -32,17 +30,13 @@ export default function TaskDetailsScreen()
 
   const lastTaskRef = useRef<Task | undefined>(undefined);
 
-  useEffect(() =>
-  {
-    if (task)
-    {
+  useEffect(() => {
+    if (task) {
       lastTaskRef.current = task;
     }
   }, [task]);
 
-
-  if (!task)
-  {
+  if (!task) {
     return (
       <TaskNotFoundState
         title="Task not found"
@@ -52,34 +46,26 @@ export default function TaskDetailsScreen()
     );
   }
 
-  const handleToggle = async () =>
-  {
+  const handleToggle = async () => {
     setIsToggling(true);
-    try
-    {
+    try {
       await toggleTask(task.id);
       Toast.show({
         type: "success",
-        text1: task.completed
-          ? "Marked as incomplete"
-          : "Task completed",
+        text1: task.completed ? "Marked as incomplete" : "Task completed",
       });
-    } finally
-    {
+    } finally {
       setIsToggling(false);
     }
   };
 
-  const runDelete = async () =>
-  {
+  const runDelete = async () => {
     setIsDeleting(true);
-    try
-    {
+    try {
       await deleteTask(task.id);
       Toast.show({ type: "success", text1: "Task deleted" });
       router.back();
-    } catch
-    {
+    } catch {
       Toast.show({
         type: "error",
         text1: "Delete failed",
@@ -89,8 +75,7 @@ export default function TaskDetailsScreen()
     }
   };
 
-  const handleDelete = () =>
-  {
+  const handleDelete = () => {
     if (isDeleting || isToggling) return;
 
     Alert.alert("Delete Task", "Are you sure you want to delete this task?", [
@@ -131,9 +116,7 @@ export default function TaskDetailsScreen()
           }}
           size={12}
           tintColor={
-            task.completed
-              ? theme.colors.completedText
-              : theme.colors.mutedText
+            task.completed ? theme.colors.completedText : theme.colors.mutedText
           }
         />
         <Text
@@ -193,9 +176,7 @@ export default function TaskDetailsScreen()
             <View style={styles.actionContent}>
               <SymbolView
                 name={{
-                  ios: task.completed
-                    ? "arrow.uturn.backward"
-                    : "checkmark",
+                  ios: task.completed ? "arrow.uturn.backward" : "checkmark",
                   android: task.completed ? "undo" : "check",
                   web: task.completed ? "undo" : "check",
                 }}

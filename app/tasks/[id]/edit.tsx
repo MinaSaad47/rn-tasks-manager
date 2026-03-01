@@ -1,8 +1,7 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { useEffect, useMemo, useState } from "react";
-import
-{
+import {
   ActivityIndicator,
   Pressable,
   StyleSheet,
@@ -17,8 +16,7 @@ import { useTasksContext } from "@/contexts/tasks-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import { hasContent, normalizeInput } from "@/utils/validators";
 
-export default function EditTaskScreen()
-{
+export default function EditTaskScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { getTaskById, updateTask } = useTasksContext();
   const theme = useAppTheme();
@@ -33,8 +31,7 @@ export default function EditTaskScreen()
   const [error, setError] = useState("");
   const [isSaving, setIsSaving] = useState(false);
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     setTitle(task?.title ?? "");
     setDescription(task?.description ?? "");
   }, [task]);
@@ -44,8 +41,7 @@ export default function EditTaskScreen()
     [title, description, isSaving],
   );
 
-  if (!id || !task)
-  {
+  if (!id || !task) {
     return (
       <TaskNotFoundState
         title="Task not found"
@@ -55,26 +51,22 @@ export default function EditTaskScreen()
     );
   }
 
-  const handleSave = async () =>
-  {
+  const handleSave = async () => {
     const safeTitle = normalizeInput(title);
     const safeDescription = normalizeInput(description);
 
-    if (!hasContent(safeTitle) || !hasContent(safeDescription))
-    {
+    if (!hasContent(safeTitle) || !hasContent(safeDescription)) {
       setError("Title and description are required.");
       return;
     }
 
     setError("");
     setIsSaving(true);
-    try
-    {
+    try {
       await updateTask(task.id, safeTitle, safeDescription);
       Toast.show({ type: "success", text1: "Task updated" });
       router.replace({ pathname: "/tasks/[id]", params: { id: task.id } });
-    } finally
-    {
+    } finally {
       setIsSaving(false);
     }
   };
